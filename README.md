@@ -1,4 +1,5 @@
-eidtor
+editor
 ======
 
 Generalized editor system
+
