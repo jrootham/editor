@@ -52,7 +52,7 @@ correctly.  {} does not.  The contents describe the whitespace that is to be ins
 + i indent to current level
 + + increase the current level and indent
 + - decrease the current level and indent
-+ c*n* skip to column *n* unless we are already past it, in which case insert a tab
++ c *n* skip to column *n* unless we are already past it, in which case insert a tab
 
 These can be combined, the most likely combinations are ni, n+ and n-.
 
