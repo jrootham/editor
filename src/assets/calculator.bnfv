@@ -1,0 +1,26 @@
+# Calculator language to test the generalized editor
+
+calculator := <statement>* ;
+statement := <print> | <assignment> ;
+assignment := {} <var> {s} "=" {s} <expression> {} "\n" 
+	^ insert <var> 
+	=> "symbols[" <var> "]=stack.pop();\n" ;
+var := symbol global ;
+print := <expression> => "print stack.pop();\n" ;
+constant := integer => "stack.push(" <constant> ");\n" 
+ref := <var> ^ <var> isInserted => "stack.push(symbol[" <ref> "]);\n" ; 
+element := <constant> | <ref> ;
+negate := "-" {} element => "stack.push(-stack.pop());\n" ;
+negation := <negate> | <element>;
+multiply := {}<expression> {s} "*" {s} <negation> 
+	=> "stack.push(stack.pop() * stack.pop());\n" ;
+divide := <expression> {s} "/" {s} <negation> 
+	=> "stack.push(stack.pop() / stack.pop());\n" ;
+add := <expression> "+" <negation> 
+	=> "stack.push(stack.pop() + stack.pop());\n" ;
+subtract := <expression> "-" <negation> 
+	=> "stack.push(stack.pop() - stack.pop());\n" ;
+<expression> := {s} "(" {} <expression> {} ")" {s};
+
+
+	
