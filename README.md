@@ -70,8 +70,7 @@ Literal output is in " ".
 
 ##### Builtins
   
-Some expressions are built in special cases, these may have parameters, possibly [optional].  These may appear only 
-by themselves on the right side of :=.
+Some expressions are built in special cases.  These may appear only by themselves on the right side of :=.
 
 +  unsigned  [ *bits* ]
 +  integer   [ *bits* ]
@@ -80,8 +79,9 @@ by themselves on the right side of :=.
 +  fixed-bcd [ *digits* [ *fraction-digits* ]]
 +  string
 +  symbol  [ */matching regex/* ] *scope* [ *namespace* ]
-    
-Yes, I am willing to support COBOL.
+
+*bits* and *exponent-bits* are the number of bits used to represent the number.  *digits* and *fraction-digits* 
+are the number of digits in the number.  Yes, I am willing to support COBOL.
     
 The matching regex defaults to /([A-Z]|[a-z])([A-Z]|[a-z]|[0-9]|-|_)*/
 
