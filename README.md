@@ -7,17 +7,13 @@ Generalized editor system
 The generalized editor system is designed to support editing and code generation 
 (compiling) for any language that can be described with a variant of Backus Naur Format (BNFV).
 
-The BNFV description looks like this:
+In the following items in *italics* are variables, regular text items are literals.  
+
+### BNFV definition
 
 Comments
 
   All source needs comments, we are using the simplest system.  All lines that start with # are comments.
-
-Items in *italics* are variables.  
-
-Regular text items are literals.  
-
-BNFV looks like this:
 
 Structure
 
