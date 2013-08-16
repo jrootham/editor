@@ -29,7 +29,7 @@ The first production is the root of the parse tree (and the starting point for t
 
 Parentheses group items.  
 
-An *item* preceded by a \* is repeated 0 or more times.  
+An *item* followed by a \* is repeated 0 or more times.  
 
 *items* separated by spaces are concatenated.
 
@@ -59,7 +59,7 @@ These can be combined, the most likely combinations are ni, n+ and n-.
 #### Compile Time Actions
 
 The currently available compile time actions are:
-+ \< insert *item*\> insert the *item* into the symbol table
++ \< insert *item*\> insert the *item* into its symbol table
 + \< *item* isInserted\> trigger an compile time error if not true
 + \< *item* isType *type*\>  type is a production defining a type (see Builtins) trigger an compile time error if not true
 + \< *item1* typeEquals *item2*\> trigger an compile time error if not true
