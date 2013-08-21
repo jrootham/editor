@@ -19,7 +19,9 @@ All source needs comments, we are using the simplest system.  All lines that sta
 
 The general structure of a production is:
   
-*production* := *BNFV expression* *[* ^ *compile time action* *]* *[* => *code to generate* *]* ;
+*production* := *[* e *]* *BNFV expression* *[* e *]* *[* ^ *compile time action* *]* *[* => *code to generate* *]* ;
+
+The optional 'e' is a direction to the editor that the expression may be extended in that direction.
 
 White space is in general not significant, so newlines may be inserted.
 
@@ -29,15 +31,17 @@ The first production is the root of the parse tree (and the starting point for t
 
 Parentheses group items.  
 
-An *item* followed by a \* is repeated 0 or more times.  
+An *item* preceded by a \* is repeated 0 or more times.  
 
 *items* separated by spaces are concatenated.
 
 *items* separated by | means one of them.  
 
+Precedemce is \* (highest), then concatenation, then | (lowest).
+
 A reference to a production is surrounded by \< \>.  
 
-A literal *item* is surrounded by " ".  An empty item is represented by "".
+A literal *item* is surrounded by " ".  An empty *item* is represented by "".
 
 Syntacticly marginal whitespace is represented by [ *[* *contents* *]* ] or { *[* *contents* *]*}.  [ ] requires 
 at least 1 whitespace character to parse correctly.  { } does not.  The *contents* describe the whitespace 
@@ -94,7 +98,7 @@ There is also
 
 +  symbol  *[* */matching regex/* *]* *scope* *[* *namespace* *]*
 
-The matching regex defaults to /([A-Z]|[a-z])([A-Z]|[a-z]|[0-9]|-|_)*/
+The matching regex defaults to /([A-Z]|[a-z])([A-Z]|[a-z]|[0-9]|_)*/
 
 The scope is one of a small set.  This list will extend as new languages arrive.
     
