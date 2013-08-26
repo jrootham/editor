@@ -13,7 +13,7 @@ In the following items in *italics* are variables.  Regular text items are liter
 
 #### Comments
 
-All source needs comments, we are using the simplest system.  All lines that start with # are comments.
+All source needs comments, we are using the simplest system.  Comments start with # and run to the end of the line.  
 
 #### Structure
 
@@ -64,13 +64,13 @@ These can be combined, the most likely combinations are ni, n+ and n-.
 #### Compile Time Actions
 
 The currently available compile time actions are:
-+ \< insert *item*\> insert the *item* into its symbol table
-+ \< *item* isInserted\> trigger an compile time error if not true
-+ \< *item* isType *type*\>  type is a production defining a type (see Builtins) trigger an compile time error if not true
-+ \< *item1* typeEquals *item2*\> trigger an compile time error if not true
-+ \< makeType *type*\> force the production to be of type *type*
-+ \< *item* set *value*\> set the *item* entry in the symbol table to *value*
-+ \< isSet *item*\> trigger a compile time error if not true
++ (insert *item*) insert the *item* into its symbol table
++ (*item* isInserted) trigger an compile time error if not true
++ (*item* isType *type*)  type is a production defining a type (see Builtins) trigger an compile time error if not true
++ (*item1* typeEquals *item2*) trigger an compile time error if not true
++ (makeType *type*) force the production to be of type *type*
++ (*item* set *value*) set the *item* entry in the symbol table to *value*
++ (isSet *item*) trigger a compile time error if not true
 
 #### Code Generation
 
