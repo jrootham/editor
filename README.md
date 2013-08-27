@@ -95,6 +95,7 @@ following builtins define types.
 +  float *[* *bits exponent-bits* *]*
 +  fixed_bcd *[* *digits* *[* *fraction_digits* *]* *]*
 +  string
++  quoted_string
 
 *bits* and *exponent-bits* are the number of bits used to represent the number.  *digits* and *fraction-digits* 
 are the number of digits in the number.  Yes, I am willing to support COBOL.
