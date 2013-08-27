@@ -61,9 +61,9 @@ The options are:
 
 These can be combined, the most likely combinations are ni, n+ and n-.
 
-#### Compile Time Actions
+#### Parse Time Actions
 
-The currently available compile time actions are:
+The currently available parse time actions are:
 + (insert *item*) insert the *item* into its symbol table
 + ( *item* isInserted) trigger an compile time error if not true
 + ( *item* isType *type*)  type is a production defining a type (see Builtins) trigger an compile time error if not true
