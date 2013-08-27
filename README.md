@@ -65,11 +65,11 @@ These can be combined, the most likely combinations are ni, n+ and n-.
 
 The currently available compile time actions are:
 + (insert *item*) insert the *item* into its symbol table
-+ (*item* isInserted) trigger an compile time error if not true
-+ (*item* isType *type*)  type is a production defining a type (see Builtins) trigger an compile time error if not true
-+ (*item1* typeEquals *item2*) trigger an compile time error if not true
++ ( *item* isInserted) trigger an compile time error if not true
++ ( *item* isType *type*)  type is a production defining a type (see Builtins) trigger an compile time error if not true
++ ( *item1* typeEquals *item2*) trigger an compile time error if not true
 + (makeType *type*) force the production to be of type *type*
-+ (*item* set *value*) set the *item* entry in the symbol table to *value*
++ ( *item* set *value*) set the *item* entry in the symbol table to *value*
 + (isSet *item*) trigger a compile time error if not true
 
 #### Code Generation
@@ -86,23 +86,24 @@ it is an concatenation connection do them from left to right.  If it is repetiti
 
 #### Builtins
   
-Some expressions are built in special cases.  These may appear only by themselves on the right side of :=.  The
+Some expressions are built in special cases.   The
 following builtins define types.
 
 +  unsigned  *[* *bits* *]*
 +  integer   *[* *bits* *]*
 +  fixed *[* *bits  exponent-bits* *]*
 +  float *[* *bits exponent-bits* *]*
-+  fixed-bcd *[* *digits* *[* *fraction-digits* *]* *]*
++  fixed_bcd *[* *digits* *[* *fraction_digits* *]* *]*
 +  string
 
 *bits* and *exponent-bits* are the number of bits used to represent the number.  *digits* and *fraction-digits* 
 are the number of digits in the number.  Yes, I am willing to support COBOL.
 
 string supports the escapes "", \\t, \\n, \\r, \\\\    
-There is also 
+There are also 
 
-+  symbol  *[* */matching regex/* *]* *scope* *[* *namespace* *]*
++  symbol  *scope* *[* *namespace* *]* *[* */matching regex/* *]*
++  match */matching regex/*
 
 The matching regex defaults to /([A-Z]|[a-z])([A-Z]|[a-z]|[0-9]|_)*/
 
